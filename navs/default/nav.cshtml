@@ -1,0 +1,81 @@
+﻿@using DotNetNuke.Web.DDRMenu;
+@using System.Dynamic; 
+@inherits DotNetNuke.Web.Razor.DotNetNukeWebPage<dynamic>
+
+@{ 
+    var root = Model.Source.root; 
+}
+
+@helper RenderNodes(IList<MenuNode> nodes) {
+if (nodes.Count > 0)
+{
+        <ul class="flex-nav">
+            @foreach (var node in nodes)
+            {
+
+                if (node.HasChildren())
+                {
+
+                    if (node.Selected)
+                    {
+                        <li>
+                            <a href="#" class="active">@node.Text</a>
+                           <!--@RenderChildNodes(node.Children)-->
+                        </li>
+                    }
+                    else
+                    {
+                        <li>
+                            <a href="#">@node.Text</a>
+                            <!--@RenderChildNodes(node.Children)-->
+                        </li>
+                    }
+
+                }
+                else
+                {
+
+                    if (node.Selected)
+                    {
+                        <li><a href="@node.Url" class="active">@node.Text</a></li>
+                    }
+                    else
+                    {
+                        <li><a href="@node.Url">@node.Text</a></li>
+                    }
+
+                }<!-- ./end has children-->
+
+            } <!-- ./end for loop-->
+        </ul>
+
+} <!-- ./ end node count -->
+            }<!-- ./ helper -->
+
+
+
+
+@helper RenderChildNodes(IList<MenuNode> nodes)
+{
+    if (nodes.Count > 0)
+    {
+        <ul>
+            @foreach (var node in nodes)
+            {
+                if (node.Selected)
+                {
+                    <li><a href="@node.Url" class="active">@node.Text</a></li>
+                }
+                else
+                {
+                    <li><a href="@node.Url">@node.Text</a></li>
+                }
+            }
+        </ul>
+    }
+
+}
+
+
+
+            @RenderNodes(root.Children)

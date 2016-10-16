@@ -1,0 +1,63 @@
+﻿//@media screen and (max-width: 35.5em)	Max 568px	
+//@media screen and (max-width: 48em)	Max 768px	
+//@media screen and (max-width: 64em)	Max 1024px
+//@media screen and (max-width: 80em)	Max 1280px
+
+
+$color1:    rgba(0, 0, 0, 1) !default;    // navbar
+$color2:    rgba(23, 189, 220, 1) !default; // topbar
+$color3:    rbga(242, 242, 242, 1)!default; // main backgorund
+$color4:    #ffffff !default;               // topbar text color
+
+$screen-xs:             568px !default;     //** Extra small screen
+$screen-sm:             768px !default;     //** Small screen
+$screen-md:             1024px !default;    //** Medium screen
+$screen-lg:             1280px !default;    //** Large screen
+
+$grid-boxes:            12 !default;        //** The number of columns to be used
+$grid-gutter:           10px !default;      //** The spacing of the grid on the left and right side.
+$grid-box-gutter:       10px !default;      //** The spacing of the boxes on the left and right side. This valie is divided into 2 for left and right.
+
+          
+
+//$font-face:             'Ubuntu', sans-serif !default;
+$font-face:             'Dosis', sans-serif;
+$font-size:             18px !default;
+$font-size-content:     16px !default;
+
+
+
+
+
+
+
+
+
+$topbar-height:         40px !default;
+$topbar-line-height:    30px !default;
+$topbar-font-size:      14px !default;
+
+
+
+
+
+
+$font-color:            $color1 !default;
+
+
+$font-thin:             300 !default;
+$font-normal:           400 !default;
+$font-bold:             700 !default;
+
+$nav-padding:           5px !default;
+$nav-bg-color:          $color1 !default;
+$nav-item-height:       30px !default;
+$nav-item-color:        $color4 !default;
+$nav-item-side-padding: 20px !default;
+$nav-item-spacing:      2px;
+$nav-item-bg-color-std: rgba(255, 255, 255, 0.2) !default;
+$nav-item-bg-color-hvr: $color2 !default;
+
+$nav-burger-height:     30px !default;
+$nav-burger-width:      30px;
+$nav-burger-color:      $nav-item-bg-color-hvr !default;

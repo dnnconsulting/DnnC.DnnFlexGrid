@@ -1,0 +1,72 @@
+<dotnetnuke type="Package" version="5.0">
+  <packages>
+    <package name="DnnC.Skins.DnnFlexGrid" type="Skin" version="01.00.00">
+      <friendlyName>DnnFlexGrid</friendlyName>
+      <description>An experimental reponsive grid system and test Dnn theme to show what is possible by using the FlexBox classes.</description>
+      <owner>
+        <name>Geoff Barlow</name>
+        <organization>DnnConsulting.nl</organization>
+        <url>http://www.DnnConsulting.nl</url>
+        <email>info@DnnConsulting.nl</email>
+      </owner>
+      <azureCompatible>true</azureCompatible>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
+      <dependencies>
+        <dependency type="CoreVersion">08.00.00</dependency>
+      </dependencies>
+      <components>
+        <component type="ResourceFile">
+          <resourceFiles>
+            <basePath>portals/_default/skins/DnnFlexGrid</basePath>
+            <resourceFile>
+              <name>Resources.zip</name>
+            </resourceFile>
+          </resourceFiles>
+        </component>
+        <component type="Skin">
+          <skinFiles>
+            <skinName>DnnFlexGrid</skinName>
+            <basePath />
+          </skinFiles>
+        </component>
+      </components>
+    </package>
+    
+    <package name="DnnC.Containers.DnnFlexGrid" type="Container" version="01.00.00">
+      <friendlyName>DnnFlexGrid</friendlyName>
+      <description>Containers for the demo DnnFlexGrid Theme package.</description>
+      <owner>
+        <name>Geoff Barlow</name>
+        <organization>DnnConsulting.nl</organization>
+        <url>http://www.DnnConsulting.nl</url>
+        <email>info@DnnConsulting.nl</email>
+      </owner>
+      <license src="License.txt"></license>
+      <releaseNotes src="ReleaseNotes.txt"></releaseNotes>
+      <dependencies>
+        <dependency type="CoreVersion">08.00.00</dependency>
+      </dependencies>
+      <components>
+        <component type="Container">
+          <basePath>portals/_default/containers/DnnFlexGrid</basePath>
+          <containerFiles>
+            <containerName>DnnFlexGrid</containerName>
+            <containerFile>
+              <name>Footer_h.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>Footer_noTitle.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>NoTitle.ascx</name>
+            </containerFile>
+            <containerFile>
+              <name>Title_h1.ascx</name>
+            </containerFile>            
+          </containerFiles>
+        </component>
+      </components>            
+    </package>
+  </packages>
+</dotnetnuke>

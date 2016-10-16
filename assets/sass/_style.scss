@@ -1,0 +1,161 @@
+﻿body{
+    background: $color3;
+    font-family: $font-face;
+    font-size: $font-size;
+}
+
+.spacerbottom   {padding-bottom: 20px; }
+.dnnCContainer  { text-align:left; }
+
+.demoC {
+    border:solid 1px #eeeeee;
+    background-color:rgba(204,204,204, .3) !important;
+    
+    padding:10px;
+    margin-bottom:20px;
+    @include nav-button-radius();
+
+    font-size: $font-size-content;
+    p{font-size: $font-size-content;}
+
+    a, a:link, a:focus, a:visited, a:active,
+    p a:link, p a:focus, p a:visited, p a:active {
+        color:$color2; 
+        @include animate();
+    }
+
+    a, a:hover,
+    p a:hover {
+        color:$color1; 
+    }
+    
+
+    img {
+        display: block;
+        max-width: 100%;
+        height:auto;
+    }
+    h1, .h1 {
+        color:$color2;
+    }
+
+}
+
+
+.h1, h1, h2, .h2, h3, .h3 {
+    line-height:24px;
+    margin-top:0;
+    margin-bottom:0;
+
+}
+
+.h1, h1 {
+    font-size: $font-size-content + 8; 
+    font-weight:$font-normal; 
+}
+
+.footerC {
+    background: rgba(0,0,0,0.4);
+    @include nav-button-radius();
+    padding:30px;
+    p{
+        color:$color4;
+        font-size: $font-size-content;
+    }
+}
+
+.topbar {
+    background: $color2;
+    color: $color4;
+    line-height: $topbar-height;
+    font-size: $topbar-font-size;
+    line-height: $topbar-line-height;
+}
+
+.logo {
+    text-align:center;
+    padding:10px;
+
+    img {
+        max-width:250px;
+        height:auto;
+    }
+}
+
+
+footer {
+    background: $color1;
+    background:url('../img/footerbg.png') repeat top left;
+    padding: 20px 0 0 0;
+    color: $color4;
+    font-size: $font-size-content;
+    margin-top:20px;
+    
+
+    a {
+        &:link, &:active, &:focus, &:visited {
+            @include animate();
+            color: $color4;
+            line-height:24px;
+            //font-size:16px !important;
+            font-size: $font-size-content;
+            text-decoration:none;
+        }
+    }
+    a:hover {color:$color2 !important;}
+
+    h1, .h1 {color : $color2; }
+
+    .sub-footer {
+        background: rgba(255, 255, 255, 0.1);
+        margin-top:20px;
+        padding:20px 0 ;
+    }
+}
+
+.inline-list {
+    margin:0;
+    padding:0;
+    
+    li {
+        @include box-sizing();
+        list-style-type:none;
+        display:inline-block;
+
+        a {
+            &:link, &:active, &:focus, &:visited {
+                color: $color4;
+                font-weight:$font-thin;
+                font-size:14px;
+                text-decoration:none;
+                @include animate();
+                padding:0 10px;           
+            }
+            &:hover { color: $color1; }
+        }
+    }    
+}
+
+.social-list {
+    margin:0;
+    padding:0;
+    
+    li {
+        @include box-sizing();
+        list-style-type:none;
+        display:inline-block;
+        
+        a {
+            &:link, &:active, &:focus, &:visited {
+                color: $color4;
+                font-weight:$font-thin;
+                font-size:24px;
+                text-decoration:none;
+                @include animate();
+                padding:0 2px;           
+            }
+            &:hover { color: $color1; }
+        }
+
+    }    
+}

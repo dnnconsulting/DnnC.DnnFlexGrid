@@ -1,0 +1,207 @@
+﻿
+
+/******** For test purposes, display the boxes */
+.show-frame {
+    @include show-frame();
+}
+
+
+.flex-container {
+    width:$screen-lg;
+    margin:0 auto;
+}
+
+/******** Set up the frame of the grid */
+.frame {
+    //@include show-frame();
+    @include flexbox;
+    margin-left: $grid-gutter;
+    margin-right: $grid-gutter; 
+    
+    .frame:nth-child(1n+1) {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}
+
+
+
+
+
+/******** set up the boxes of the grid */
+.box {
+    margin-left: ($grid-box-gutter / 2);
+    margin-right: ($grid-box-gutter / 2);
+    @include flex-grow(1);
+  
+    &:first-child   { margin-left:0; }
+    &:last-child    { margin-right:0; }
+}
+
+/******** Remove the margin of the first box */
+[class^=box-]:first-child {
+    margin-left: 0;
+}
+
+/******** Remove the margin of the last box */
+[class^=box-]:last-child {
+    margin-right: 0;
+}
+
+
+/******** Create the classes for the boxes */
+@include create-boxes;
+/******** Create the classes for the size of the boxes */
+@include create-box-sizes;
+
+
+
+/******** Frame boxes justification */
+.justify-left       { @include justify-content(flex-start); }
+.justify-right      { @include flex-direction(); @include flex(flex-end); }
+.justify-center     { @include justify-content(center); }
+.justify-between    { @include justify-content(space-between); }
+.justify-around     { @include justify-content(space-around); }
+
+/******** Frame boxes alignment moves them up/down/centered */
+.boxes-top          { @include align-items(flex-start); }
+.boxes-bottom       { @include align-items(flex-end); }
+.boxes-middle       { @include align-items(center); }
+.boxes-baseline     { @include align-items(baseline); }
+
+/******** Box alignment */
+.box-top            { @include align-self(flex-start); }
+.box-bottom         { @include align-self(flex-end); }
+.box-middle         { @include align-self(center); }
+.box-baseline       { @include align-self(baseline); }
+.box-stretch        { @include align-items(stretch); @include flex-grow(1); }
+
+/******** frame boxes direction */
+.left-to-right { @include flex-direction(row); }
+.right-to-left { @include flex-direction(row-reverse); }
+.top-to-bottom { 
+    @include flex-direction(column); 
+    .box           { margin-left:0; margin-right:0; }
+    [class^=box-]  { margin-left:0; margin-right:0; }
+}
+.bottom-to-top { 
+    @include flex-direction(column-reverse); 
+    .box           { margin-left:0; margin-right:0; }
+    [class^=box-]  { margin-left:0; margin-right:0; }
+}
+
+
+
+.left       { text-align:left; }
+.right      { text-align:right; }
+.center     { text-align:center ;}
+
+
+/******** set up the show and hide classes */
+[class^=hide-] { display:inline-block; } //***************************
+[class^=show-] { display:none; }
+[class^=show-until-] { display:none; }
+
+
+
+@media (max-width: $screen-lg)  {
+    .flex-container {  max-width: $screen-md; }
+}
+
+@media (min-width: $screen-lg)  {
+    .show-large,.show-medium,.show-small,.show-xsmall   { display:none; } 
+    .hide-large                                         { display:none; }       
+    .show-large                                         { display:inline-flex; } 
+}
+
+@media (min-width: $screen-md + 1) and (max-width: $screen-lg)  {
+    .flex-container                                     { max-width: 100%; }  
+    .show-large,.show-medium,.show-small,.show-xsmall   { display:none; }      
+    .hide-large                                         { display:none; }
+    .show-large                                         { display:inline-flex; } 
+
+}
+
+
+
+@media (min-width: $screen-sm + 1) and (max-width: $screen-md)  {
+    .flex-container                                     { max-width: 100%; } 
+    .show-large,.show-medium,.show-small,.show-xsmall   { display:none; } 
+    .hide-medium                                        { display:none; }
+    .show-medium                                        { display:inline-flex; } 
+}
+
+@media (min-width: $screen-xs + 1) and (max-width: $screen-sm)  {
+    .flex-container                                     { max-width: 100%; } 
+    .show-large,.show-medium,.show-small,.show-xsmall   { display:none; }
+    .hide-small                                         { display:none; }
+    .show-small                                         { display:inline-flex; } 
+    
+}
+
+
+@media (max-width: $screen-xs)  {
+    .flex-container                                     { max-width: 100%; } 
+    .show-large,.show-medium,.show-small,.show-xsmall   { display:none; } 
+    .hide-xsmall                                        { display:none; }
+    .show-xsmall                                        { display:inline-flex; } 
+}
+
+
+@media (min-width: $screen-lg) { 
+    .show-until-xsmall,           
+    .show-until-small,             
+    .show-until-medium,      
+    .show-until-large   { display:none; }
+}
+
+@media (max-width: $screen-lg)  {
+    .frame.large { 
+        @include create-media-breaks;
+        .left, .right {text-align:center;}
+    } 
+
+    .show-until-xsmall,           
+    .show-until-small,             
+    .show-until-medium  { display:none; }
+    .show-until-large   { display:inline-flex; }
+}
+
+@media (max-width: $screen-md) {
+    .frame.medium { 
+        @include create-media-breaks; 
+        .left, .right {text-align:center;}
+    }
+
+    .show-until-xsmall,           
+    .show-until-small   { display:none; }   
+    .show-until-medium, 
+    .show-until-large   { display:inline-flex; }
+
+
+}
+
+@media (max-width: $screen-sm) {
+    .frame.small { 
+        @include create-media-breaks; 
+        .left, .right {text-align:center;}
+    }
+
+    .show-until-xsmall  { display:none; }      
+    .show-until-small,            
+    .show-until-medium, 
+    .show-until-large   { display:inline-flex; }
+}
+
+@media (max-width: $screen-xs) {
+    .frame.xsmall { 
+        @include create-media-breaks;
+        .left, .right {text-align:center;}
+    }
+
+    .show-until-xsmall          
+    .show-until-small,           
+    .show-until-medium, 
+    .show-until-large   { display:none; }
+}
