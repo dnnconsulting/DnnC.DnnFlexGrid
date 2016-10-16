@@ -1,0 +1,13 @@
+﻿<h3>Demo DnnFlexGrid Theme for Dnn</h3>
+	DnnConsulting.nl <br/>
+	Geoff Barlow<br />
+	<a href="mailto:info@dnnconsulting.nl">info@DnnConsulting.nl</a><br />
+	<a href=http://www.dnnconsulting.nl>http://www.dnnconsulting.nl</a><br />
+<hr/>
+	<h3>About the Demo DnnFlexGrid Theme</h3>
+
+	<h4>Version 01.00.00</h4><br />
+	<Strong>This is a demo FlexGrid system with a Dnn test theme to experiment with</strong>
+	Not ment for production use!!
+	
+</div>
